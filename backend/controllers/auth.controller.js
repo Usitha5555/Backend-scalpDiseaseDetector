@@ -22,7 +22,7 @@ export const signup = [body('username').isAlphanumeric().withMessage('Username m
         return res.status(400).json({ error: 'Username already exists' });
       }
 
-      // Hash the password using bcrypt library
+      
       const salt = await bcrypt.genSalt(10);
       const hashedPassword = await bcrypt.hash(password, salt);
 
