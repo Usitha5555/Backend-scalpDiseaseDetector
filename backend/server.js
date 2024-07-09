@@ -4,7 +4,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import rateLimit from 'express-rate-limit';
-import cors from 'cors'; // Import cors
+import cors from 'cors'; 
 import authRoutes from './routes/auth.routes.js';
 import connectToMongoDB from './db/connectToMongoDB.js';
 import PasswordResetRoutes from "./routes/PasswordReset.routes.js"
@@ -19,8 +19,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(cors({
-  origin: 'http://localhost:3000', // Adjust this to match the frontend's origin
-  credentials: true, // If you are using cookies
+  origin: 'http://localhost:3000', 
+  credentials: true, 
 }));
 
 app.use(helmet({
@@ -49,7 +49,7 @@ app.use(limiter);
 app.use('/api/auth', authRoutes);
 app.use('/api/password-reset', PasswordResetRoutes);
 
-// Serve static files from the React frontend app
+
 app.use(express.static(path.join(__dirname, 'frontend', 'build')));
 
 app.get('*', (req, res) => {

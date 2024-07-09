@@ -33,7 +33,7 @@ export const sendVerificationKey = async (req, res) => {
     }
 
     const key = generateKey();
-    const keyExpires = new Date(Date.now() + 3600000); // 1 hour
+    const keyExpires = new Date(Date.now() + 3600000); 
     user.verificationKey = key;
     user.keyExpires = keyExpires;
     await user.save();
