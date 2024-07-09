@@ -20,12 +20,12 @@ const userSchema = mongoose.Schema(
       required: true,
       unique: true,
     },
-    // verificationKey: {
-    //   type: String,
-    // },
-    // keyExpires: {
-    //   type: Date,
-    // },
+    verificationKey: {
+      type: String,
+    },
+    keyExpires: {
+      type: Date,
+    },
   },
   {
     timestamps: true,

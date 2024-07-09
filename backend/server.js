@@ -7,6 +7,7 @@ import rateLimit from 'express-rate-limit';
 import cors from 'cors'; // Import cors
 import authRoutes from './routes/auth.routes.js';
 import connectToMongoDB from './db/connectToMongoDB.js';
+import PasswordResetRoutes from "./routes/PasswordReset.routes.js"
 
 dotenv.config();
 
@@ -46,6 +47,7 @@ const limiter = rateLimit({
 app.use(limiter);
 
 app.use('/api/auth', authRoutes);
+app.use('/api/password-reset', PasswordResetRoutes);
 
 // Serve static files from the React frontend app
 app.use(express.static(path.join(__dirname, 'frontend', 'build')));
