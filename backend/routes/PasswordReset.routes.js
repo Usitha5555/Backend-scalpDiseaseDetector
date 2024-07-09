@@ -1,6 +1,6 @@
 import express from 'express';
 import { body, validationResult } from 'express-validator';
-import { sendVerificationKey, resetPassword ,verifyKey } from '../controllers/passwordReset.controller.js';
+import { sendVerificationKey, resetPassword ,verifyKey } from '../controllers/PasswordReset.js';
 
 const router = express.Router();
 
